@@ -29,7 +29,6 @@ export default function Login() {
         router.refresh();
       }
     } catch (error) {
-        console.log(error);
       setError("An error occurred during login");
     }
   };

@@ -28,7 +28,6 @@ export async function GET() {
 
     return NextResponse.json(candidates);
   } catch (error) {
-    console.log(error);
     return NextResponse.json(
       { message: "Error fetching candidates" },
       { status: 500 }

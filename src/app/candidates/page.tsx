@@ -34,7 +34,6 @@ export default function CandidatesPage() {
       const data = await res.json();
       setCandidates(data);
     } catch (error) {
-      console.log(error);
       setMessage("Error fetching candidates");
     } finally {
       setLoading(false);
@@ -59,7 +58,6 @@ export default function CandidatesPage() {
         fetchCandidates();
       }
     } catch (error) {
-      console.log(error);
       setMessage("Error submitting vote");
     }
   };

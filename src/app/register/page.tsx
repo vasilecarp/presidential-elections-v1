@@ -32,7 +32,6 @@ export default function Register() {
         setError(data.message);
       }
     } catch (error) {
-        console.log(error);
       setError("An error occurred during registration");
     }
   };

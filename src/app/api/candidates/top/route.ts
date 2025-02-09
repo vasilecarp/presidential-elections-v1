@@ -27,7 +27,6 @@ export async function GET() {
 
     return NextResponse.json(topCandidates);
   } catch (error) {
-    console.log(error);
     return NextResponse.json(
       { message: "Error fetching top candidates" },
       { status: 500 }
