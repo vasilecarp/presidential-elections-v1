@@ -35,7 +35,6 @@ export default function ProfilePage() {
       setDescription(data.description || "");
       setLoading(false);
     } catch (error) {
-        console.log(error);
       setMessage("Error fetching profile");
       setLoading(false);
     }
