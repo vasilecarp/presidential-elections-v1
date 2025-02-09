@@ -24,14 +24,15 @@ export default function Register() {
         body: JSON.stringify(formData),
       });
 
+      const data = await res.json();
+
       if (res.ok) {
         router.push("/login");
       } else {
-        const data = await res.json();
         setError(data.message);
       }
     } catch (error) {
-      console.log(error);
+        console.log(error);
       setError("An error occurred during registration");
     }
   };
@@ -41,8 +42,11 @@ export default function Register() {
       <div className="max-w-md w-full space-y-8">
         <div>
           <h2 className="mt-6 text-center text-3xl font-extrabold text-gray-900">
-            Register for an account
+            Register to Vote
           </h2>
+          <p className="mt-2 text-center text-sm text-gray-600">
+            Create your account to participate in the presidential elections
+          </p>
         </div>
 
         {error && (
@@ -58,7 +62,7 @@ export default function Register() {
                 htmlFor="name"
                 className="block text-sm font-medium text-gray-700"
               >
-                Name
+                Full Name
               </label>
               <input
                 id="name"
@@ -119,7 +123,7 @@ export default function Register() {
           <div>
             <button
               type="submit"
-              className="group relative w-full flex justify-center py-2 px-4 border border-transparent text-sm font-medium rounded-md text-white bg-blue-600 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500"
+              className="w-full flex justify-center py-2 px-4 border border-transparent text-sm font-medium rounded-md text-white bg-blue-600 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500"
             >
               Register
             </button>
@@ -131,7 +135,7 @@ export default function Register() {
             href="/login"
             className="font-medium text-blue-600 hover:text-blue-500"
           >
-            Already have an account? Log in
+            Already have an account? Sign in
           </Link>
         </div>
       </div>

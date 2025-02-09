@@ -20,7 +20,6 @@ export async function POST(req: Request) {
 
     const hashedPassword = await hash(password, 10);
 
-    // Create user without storing the result since we don't use it
     await prisma.user.create({
       data: {
         name,
